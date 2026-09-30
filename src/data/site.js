@@ -1,8 +1,9 @@
 export const site = {
   name: 'Nourish Bites',
-  tagline: 'Fuel · Share · Grow',
+  tagline: 'Real food · Small bites',
   headline: 'Energy balls & granola bites',
-  subhead: 'Handmade bites with oats, nuts, seeds, and real flavor. No mystery powders. No diet-brand voice.',
+  subhead:
+    'Handmade bites with oats, nuts, seeds, and real flavor. No mystery powders. No diet-brand voice.',
   instagram: 'https://instagram.com/nourishbites',
   instagramHandle: '@nourishbites',
   // Replace with your real number, country code, no plus or spaces
@@ -89,21 +90,9 @@ export const cups = [
 ]
 
 export const favorites = [
-  {
-    name: 'Dark cacao + almond',
-    quote: 'Tastes like a truffle. Does not eat like candy.',
-    tag: 'Best seller',
-  },
-  {
-    name: 'Peanut butter + oat',
-    quote: 'The one people reorder without thinking.',
-    tag: 'Crowd pick',
-  },
-  {
-    name: 'Blueberry + cashew',
-    quote: 'Bright, not cloying. Works as breakfast.',
-    tag: 'New favorite',
-  },
+  { name: 'Dark cacao + almond', quote: 'Tastes like a truffle. Does not eat like candy.', tag: 'Best seller' },
+  { name: 'Peanut butter + oat', quote: 'The one people reorder without thinking.', tag: 'Crowd pick' },
+  { name: 'Blueberry + cashew', quote: 'Bright, not cloying. Works as breakfast.', tag: 'New favorite' },
 ]
 
 export const reviews = [

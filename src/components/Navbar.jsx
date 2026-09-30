@@ -19,6 +19,7 @@ export default function Navbar() {
           <a href="/#cups">Cups</a>
           <a href="/#menu">Menu</a>
           <a href="/#reviews">Reviews</a>
+          <a href="/#gifts">Gift Cards</a>
           <a href="/#order">How to Order</a>
         </nav>
         <button className="nav-toggle" onClick={() => setOpen((v) => !v)} aria-label="Menu">
