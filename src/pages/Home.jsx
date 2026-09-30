@@ -52,7 +52,7 @@ export default function Home() {
               We pack it the same day and keep the conversation on WhatsApp — same as a neighborhood kitchen, not a catalog.
             </p>
             <p>
-              This site borrows a clean food-brand layout on purpose. The menu is not stuffed dates.
+              The page structure is borrowed from a clean food-brand layout on purpose. The menu is not stuffed dates.
               If a flavor does not earn a reorder, it leaves the list.
             </p>
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
             {favorites.map((f) => (
               <article className="fav" key={f.name}>
                 <span className="tag">{f.tag}</span>
-                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 28 }}>{f.name}</h3>
+                <h3>{f.name}</h3>
                 <p>{f.quote}</p>
               </article>
             ))}
@@ -191,6 +191,21 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section alt" id="gifts">
+        <div className="wrap gift-row">
+          <div>
+            <div className="section-head" style={{ margin: '0 0 20px', textAlign: 'left' }}>
+              <h2>Gift cards</h2>
+              <p>Send a $20–$100 note. They pick the box. You skip guessing flavors.</p>
+            </div>
+            <a className="btn btn-dark" href={whatsappLink(`Hi ${site.name}! I want a gift card.`)} target="_blank" rel="noreferrer">
+              Ask for a gift card
+            </a>
+          </div>
+          <div className="gift-visual" aria-hidden="true" />
         </div>
       </section>
 
