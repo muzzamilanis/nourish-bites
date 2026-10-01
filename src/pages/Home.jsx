@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar.jsx'
+import BoxPreview from '../components/BoxPreview.jsx'
 import { site, boxes, cups, favorites, reviews, orderSteps, storageNotes, flavors, whatsappLink } from '../data/site'
 
 export default function Home() {
@@ -9,7 +10,13 @@ export default function Home() {
       <Navbar />
 
       <section className="hero">
-        <div className="wrap">
+        <div className="top-scene" aria-hidden="true">
+          <span className="top-scene__orb top-scene__orb--gold-a" />
+          <span className="top-scene__orb top-scene__orb--green-a" />
+          <span className="top-scene__orb top-scene__orb--green-b" />
+          <span className="top-scene__orb top-scene__orb--gold-b" />
+        </div>
+        <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
           <div className="seal">
             <div>
               <img src="/logo.svg" alt="" width="36" height="36" style={{ margin: '0 auto 4px' }} />
@@ -31,7 +38,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="story">
+      <section className="section" id="story" data-reveal="up">
         <div className="wrap story">
           <article className="story-card">
             <header>
@@ -51,23 +58,20 @@ export default function Home() {
               Oats, nuts, seeds, cacao, fruit, honey when it earns its place. <strong>You choose the mix.</strong>
               We pack it the same day and keep the conversation on WhatsApp — same as a neighborhood kitchen, not a catalog.
             </p>
-            <p>
-              The page structure is borrowed from a clean food-brand layout on purpose. The menu is not stuffed dates.
-              If a flavor does not earn a reorder, it leaves the list.
-            </p>
           </div>
         </div>
       </section>
 
       <section className="section alt" id="boxes">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head" data-reveal="up">
             <h2>Four ways to fill the tin</h2>
-            <p>Every box is packed to order. Prices are placeholders until you lock your recipe costs.</p>
+            <p>Every box is packed to order. The preview below is the motion, not a photo of a tin.</p>
           </div>
+          <BoxPreview />
           <div className="grid-2">
-            {boxes.map((box) => (
-              <article className="card" key={box.id}>
+            {boxes.map((box, i) => (
+              <article className="card" data-reveal={i % 2 ? 'left' : 'up'} key={box.id}>
                 <div className="kicker">{box.kicker}</div>
                 <h3>{box.name}</h3>
                 <p>{box.blurb}</p>
@@ -95,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="cups">
+      <section className="section" id="cups" data-reveal="up">
         <div className="wrap">
           <div className="section-head">
             <h2>Grab-and-go cups</h2>
@@ -110,12 +114,7 @@ export default function Home() {
                 <ul className="flavor-list">
                   {cup.flavors.map((f) => <li key={f}>{f}</li>)}
                 </ul>
-                <a
-                  className="btn btn-ghost"
-                  href={whatsappLink(`Hi ${site.name}! I want to ask about ${cup.name} cups.`)}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className="btn btn-ghost" href={whatsappLink(`Hi ${site.name}! I want to ask about ${cup.name} cups.`)} target="_blank" rel="noreferrer">
                   Ask about this cup
                 </a>
               </article>
@@ -124,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt" id="menu">
+      <section className="section alt" id="menu" data-reveal="zoom">
         <div className="wrap">
           <div className="section-head">
             <h2>Crowd favorites</h2>
@@ -142,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="reviews">
+      <section className="section" id="reviews" data-reveal="up">
         <div className="wrap">
           <div className="section-head">
             <h2>From the thread</h2>
@@ -159,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt" id="order">
+      <section className="section alt" id="order" data-reveal="up">
         <div className="wrap">
           <div className="section-head">
             <h2>How to order</h2>
@@ -177,7 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="storage">
+      <section className="section" id="storage" data-reveal="up">
         <div className="wrap">
           <div className="section-head">
             <h2>Keep them decent</h2>
@@ -191,21 +190,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section alt" id="gifts">
-        <div className="wrap gift-row">
-          <div>
-            <div className="section-head" style={{ margin: '0 0 20px', textAlign: 'left' }}>
-              <h2>Gift cards</h2>
-              <p>Send a $20–$100 note. They pick the box. You skip guessing flavors.</p>
-            </div>
-            <a className="btn btn-dark" href={whatsappLink(`Hi ${site.name}! I want a gift card.`)} target="_blank" rel="noreferrer">
-              Ask for a gift card
-            </a>
-          </div>
-          <div className="gift-visual" aria-hidden="true" />
         </div>
       </section>
 
@@ -223,9 +207,7 @@ export default function Home() {
       <footer className="footer">
         <div className="wrap footer-inner">
           <div>© {new Date().getFullYear()} {site.name}</div>
-          <div>
-            Instagram <a href={site.instagram} target="_blank" rel="noreferrer">{site.instagramHandle}</a>
-          </div>
+          <div>Instagram <a href={site.instagram} target="_blank" rel="noreferrer">{site.instagramHandle}</a></div>
           <div>Replace the WhatsApp number in <code>src/data/site.js</code></div>
         </div>
       </footer>
