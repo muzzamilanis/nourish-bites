@@ -1,13 +1,13 @@
 export const site = {
   name: 'Nourish Bites',
-  tagline: 'Real food · Small bites',
+  tagline: 'Real Ingredients · Real Energy',
   headline: 'Energy balls & granola bites',
   subhead:
     'Handmade bites with oats, nuts, seeds, and real flavor. No mystery powders. No diet-brand voice.',
-  instagram: 'https://instagram.com/nourishbites',
-  instagramHandle: '@nourishbites',
+  instagram: 'https://www.instagram.com/thenourish.bites',
+  instagramHandle: '@thenourish.bites',
   // Replace with your real number, country code, no plus or spaces
-  whatsappNumber: '923001234567',
+  whatsappNumber: '923702552070',
   promo: 'Opening offer: two Share Boxes, 10% off. Message us to claim it.',
 }
 
